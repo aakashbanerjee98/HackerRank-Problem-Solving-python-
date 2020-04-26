@@ -6,7 +6,7 @@ import random
 import re
 import sys
 
-# Complete the aVeryBigSum function below.
+
 def aVeryBigSum(ar):
     sum1=0
     for i in ar:
