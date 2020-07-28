@@ -1,0 +1,83 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the migratoryBirds function below.
+def migratoryBirds(arr):
+    
+    list1=arr
+    c1=0
+    c2=0
+    c3=0
+    c4=0
+    c5=0
+
+    
+
+    
+    for i in list1:
+        if i == 1:
+            c1=c1+1
+            
+
+
+    for i in list1:
+        if i == 2:
+            c2=c2+1
+
+    for i in list1:
+        if i == 3:
+            c3=c3+1
+
+    for i in list1:
+        if i == 4:
+            c4=c4+1
+
+    for i in list1:
+        if i == 5:
+            c5=c5+1
+
+    #print(arr)
+    #print(list1)
+    #print(c1)
+    #print(c2)
+    #print(c3)
+    #print(c4)
+    #print(c5)
+
+    d={'1':c1,'2':c2,'3':c3,'4':c4,'5':c5}
+    #print(d)
+    z=max(d,key=d.get)
+    p=int(z)
+
+
+    return(p)
+
+    
+
+
+
+
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    arr_count = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = migratoryBirds(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
