@@ -1,0 +1,47 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the findDigits function below.
+def findDigits(n):
+    d=str(n)
+    list1=[]
+    c=0
+    for i in range(0,len(d)):
+        list1.append(int(d[i]))
+    print(list1)
+    for j in range(0,len(list1)):
+        if list1[j] != 0:
+            if n%list1[j]==0:
+                c=c+1
+        else:
+            continue
+
+    return c
+
+
+
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        n = int(input())
+
+        result = findDigits(n)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
