@@ -1,0 +1,57 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the beautifulDays function below.
+def beautifulDays(i, j, k):
+    count=0
+    list1=[]
+    list2=[]
+    for a in range(i,j+1):
+        list1.append(a)
+    for b in list1:
+        b=str(b)
+        d=b[::-1]
+        d=int(d)
+        list2.append(d)
+    #print(list2)
+    for l in range(0,len(list1)):
+        e=abs(list1[l]-list2[l])
+        if e % k == 0:
+            count=count+1
+
+    return count
+
+
+
+
+
+
+
+
+        
+
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ijk = input().split()
+
+    i = int(ijk[0])
+
+    j = int(ijk[1])
+
+    k = int(ijk[2])
+
+    result = beautifulDays(i, j, k)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
