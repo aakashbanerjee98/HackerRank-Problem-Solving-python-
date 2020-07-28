@@ -1,0 +1,43 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the viralAdvertising function below.
+def viralAdvertising(n):
+    a=5
+    list1=[5]
+    list2=[]
+    for i in range(0,n):
+        d= (a//2)*3
+        list1.append(d)
+        a=d
+    print(list1)
+    for j in range(0,len(list1)):
+
+        list2.append(list1[j]//2)
+
+    list3=list2
+    list3.pop()
+
+    
+    
+    c=sum(list3)
+    return c
+    
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    result = viralAdvertising(n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
