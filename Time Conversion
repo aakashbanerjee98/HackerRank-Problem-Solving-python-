@@ -1,0 +1,37 @@
+#!/bin/python3
+
+import os
+import sys
+
+#
+# Complete the timeConversion function below.
+#
+def timeConversion(s):
+    #
+    # Write your code here.
+    #
+    list1=['01','02','03','04','05','06','07','08','09','10','11','12']
+    d={'01':'13','02':'14','03':'15','04':'16','05':'17','06':'18','07':'19','08':'20','09':'21','10':'22','11':'23','12':'12'}
+    #print(list1)
+    #print(d)
+    
+    if s[8:]== "AM" and s[0:2] != "12" :
+        return(s[:8])
+    elif s[8:]== "AM" and s[0:2] == "12" :
+        return("00"+s[2:8])
+    
+    elif s[8:]== "PM":
+        for i in range(0,12):
+            if list1[i]== s[:2]:
+                p=list1[i]
+        return(d[p]+s[2:8])
+if __name__ == '__main__':
+    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    f.write(result + '\n')
+
+    f.close()
